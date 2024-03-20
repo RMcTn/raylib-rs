@@ -2,12 +2,10 @@
 use crate::core::math::{Matrix, Ray, Vector2};
 use crate::core::{RaylibHandle, RaylibThread};
 use crate::ffi;
-#[cfg(feature = "serde")]
-use serde::{Deserialize, Serialize};
 use std::ffi::{CStr, CString, IntoStringError, NulError};
 use std::os::raw::c_char;
 
-#[cfg(feature = "with_serde")]
+#[cfg(any(feature = "with_serde", feature = "serde"))]
 use serde::{Deserialize, Serialize};
 
 // MonitorInfo grabs the sizes (virtual and physical) of your monitor
